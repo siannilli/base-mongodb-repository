@@ -1,9 +1,9 @@
 import * as mongoose from 'mongoose';
 
-import { RepositoryQueryCommand } from '../src/RepositoryQuery';
-import { RepositoryQueryResult } from '../src/RepositoryQueryResult';
-import * as Repository from '../src/IRepository';
-import { DatabaseException } from '../src/DatabaseException';
+import { RepositoryQueryCommand } from '../RepositoryQuery';
+import { RepositoryQueryResult } from '../RepositoryQueryResult';
+import * as Repository from '../IRepository';
+import { DatabaseException } from '../DatabaseException';
 
 // mongoose schema
 var schema = new mongoose.Schema(

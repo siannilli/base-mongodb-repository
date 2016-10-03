@@ -5,7 +5,7 @@
             "name": "Launch",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceRoot}/test/index.ts",
+            "program": "${workspaceRoot}/src/test/index.ts",
             "stopOnEntry": false,
             "args": [],
             "cwd": "${workspaceRoot}",
@@ -20,7 +20,7 @@
             },
             "console": "internalConsole",
             "sourceMaps": true,
-            "outDir": "${workspaceRoot}/build"
+            "outDir": "${workspaceRoot}/build/"
         },
         {
             "name": "Attach",

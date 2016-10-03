@@ -1,8 +1,8 @@
 import * as mongoose from 'mongoose';
 import * as mongodb from 'mongodb';
 import { TestRepository, TestRepositoryAddCommand, TestRepositoryUpdateCommand, ITest, ITestModel } from './TestRepository';
-import { RepositoryQueryCommand, IQuery } from '../src/RepositoryQuery'
-import { RepositoryQueryResult } from '../src/RepositoryQueryResult';
+import { RepositoryQueryCommand, IQuery } from '../RepositoryQuery'
+import { RepositoryQueryResult } from '../RepositoryQueryResult';
 
 mongoose.connect(process.env.DATASTORE)
     .then(() => {
