@@ -6,8 +6,11 @@
   "scripts": {
     "test": "node ./test/index"
   },
-  "author": "siannilli",
-  "license": "ISC",
+  "author": { "email": "stefano.iannilli@gmail.com", "name": "Stefano Iannilli", "url": "https://github.com/siannilli/base-mongodb-repository"},
+  "repository": {
+    "url": "https://github.com/siannilli/base-mongodb-repository"
+  },
+  "license": "MIT",
   "dependencies": {
     "mongodb": "^2.2.10",
     "mongoose": "^4.6.2"
