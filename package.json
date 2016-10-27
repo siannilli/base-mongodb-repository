@@ -4,15 +4,18 @@
   "description": "Base repository for MongoDB access using mongoose library",
   "main": "index.js",
   "scripts": {
+    "install": "tsc -p .",
     "test": "node ./test/index"
   },
-  "author": { "email": "stefano.iannilli@gmail.com", "name": "Stefano Iannilli", "url": "https://github.com/siannilli/base-mongodb-repository"},
+  "author": { "email": "stefano.iannilli@gmail.com", "name": "siannilli", "url": "https://github.com/siannilli/base-mongodb-repository"},
   "repository": {
+    "type": "git",
     "url": "https://github.com/siannilli/base-mongodb-repository"
   },
   "license": "MIT",
   "dependencies": {
     "mongodb": "^2.2.10",
     "mongoose": "^4.6.2"
-  }
+  },
+  "preferGlobal": false
 }
