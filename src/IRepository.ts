@@ -5,12 +5,12 @@ import { RepositoryQueryResult } from './RepositoryQueryResult';
 import { DatabaseException } from './DatabaseException';
 
 export interface IRepository<TDoc extends Mongoose.Document>{
-    Find(query:RepositoryQueryCommand):Promise.IThenable<RepositoryQueryResult<TDoc>>;
-    Get(id:string):Promise.IThenable<TDoc>;    
+    Find(query:RepositoryQueryCommand):Promise<RepositoryQueryResult<TDoc>>;
+    Get(id:string):Promise<TDoc>;    
     
-    Add(command:BaseAddEntityCommand<TDoc>):Promise.IThenable<TDoc>;  
-    Save(command:BaseSaveEntityCommand<TDoc>):Promise.IThenable<TDoc>;
-    Delete(command:BaseDeleteEntityCommand<TDoc>):Promise.IThenable<TDoc>;  
+    Add(command:BaseAddEntityCommand<TDoc>):Promise<TDoc>;  
+    Save(command:BaseSaveEntityCommand<TDoc>):Promise<TDoc>;
+    Delete(command:BaseDeleteEntityCommand<TDoc>):Promise<TDoc>;  
 } 
 
 export interface IRepositoryEntityCommand<T>{
@@ -34,7 +34,7 @@ export abstract class Repository<IDocumentModel extends Mongoose.Document> imple
         this.model = model;    
     }
     
-    Find(command:RepositoryQueryCommand):Promise.IThenable<RepositoryQueryResult<IDocumentModel>>{
+    Find(command:RepositoryQueryCommand): Promise<RepositoryQueryResult<IDocumentModel>>{
         let db:Mongoose.Model<IDocumentModel> = this.model;
         return new Promise(function(resolve, reject){                        
             
@@ -53,7 +53,7 @@ export abstract class Repository<IDocumentModel extends Mongoose.Document> imple
         });
     }
     
-    Get(id:string):Promise.IThenable<IDocumentModel>{
+    Get(id:string):Promise<IDocumentModel>{
         let search = this.model.findOne({ _id:id });
 
         return new Promise(function(resolve, reject) {
@@ -67,11 +67,11 @@ export abstract class Repository<IDocumentModel extends Mongoose.Document> imple
         });        
     }
     
-    Add(command:BaseAddEntityCommand<IDocumentModel>):Promise.IThenable<IDocumentModel>{
+    Add(command:BaseAddEntityCommand<IDocumentModel>):Promise<IDocumentModel>{
         return this.Save(command);
     }
         
-    Save(command:BaseSaveEntityCommand<IDocumentModel>):Promise.IThenable<IDocumentModel>{
+    Save(command:BaseSaveEntityCommand<IDocumentModel>):Promise<IDocumentModel>{
         let db = this.model;
         console.log(`Saving command ${JSON.stringify(command)}`);
         
@@ -89,7 +89,7 @@ export abstract class Repository<IDocumentModel extends Mongoose.Document> imple
         });                
     }            
     
-    Delete(command:BaseDeleteEntityCommand<IDocumentModel>):Promise.IThenable<IDocumentModel>{
+    Delete(command:BaseDeleteEntityCommand<IDocumentModel>):Promise<IDocumentModel>{
         let db = this.model;
         return new Promise(function(resolve, reject) {
             command.entity.remove(function(error:any) {
