@@ -7,8 +7,7 @@
         "sourceMap": true,
         "declaration": true,
         "sourceRoot": "src",
-        "outDir": "build",
-        "watch": true
+        "outDir": "build"
     },
     "exclude": [
         "node_modules", "build"
