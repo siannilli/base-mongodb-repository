@@ -4,7 +4,7 @@
   "description": "Base repository for MongoDB access using mongoose library",
   "main": "index.js",
   "scripts": {
-    "install": "npm install && tsc -p .",
+    "install": "typings install && tsc -p .",
     "test": "node ./test/index"
   },
   "author": { "email": "stefano.iannilli@gmail.com", "name": "siannilli", "url": "https://github.com/siannilli/base-mongodb-repository"},
